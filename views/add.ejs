@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+    <meta charset="utf-8">
+    <meta charset="iso-8559-1"/>
+    <meta name= "description" content="pagina de enseñanza"/>
+    <meta name="keywords" content="html5,javascript,diseño web"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/update.css">
+   <title>Update</title>
+</head>
+
+<h1 id="crear">Agregar Producto</h1>
+
+<form action="/addPost" method="post">
+    
+<div class='flex-principal'>
+<!------------------------------------------->
+<div id="editorcentrall">
+    <!------------------------------------------>
+    <div class="DIV">
+    <label for="nombre">nombre</label>
+    
+    <input type="text" autofocus name="nombre" value=""/>
+    </div>
+    <!------------------------------------------>
+    <div class="DIV">
+    <label for="codigo">codigo</label>
+    
+    <input name="codigo" type="number" value=""/>
+    </div>
+    <!--------------------------------------------->
+    <div class="DIV">
+    <label for="precio">precio</label>
+    <input type="number" name="precio" value="">
+    </div>
+    <!----------------------------------------------------->
+    <div class="DIV">
+    <label for="descripcion">descripcion</label>
+    <input type="text" name="descripcion" value="">
+    </div>
+    <!----------------------------------------------------->
+    <div class="DIV">
+    <label for="calidad">calidad</label>
+    <input type="text" name="calidad" value="">
+    </div>
+    <!----------------------------------------------------->
+    <div class="DIV">
+    <label for="cantidad">Cantidad</label>
+    <input type="number" name="cantidad" value="">
+    </div>
+    <!----------------------------------------------------->
+    </div>
+    
+<!------------------------------------------->
+<div id="cancelar">
+	<input type="submit" value="Actualizar" id="update">
+    <a href="/productos" id="botonProductos">Productos</a>
+</div>
+
+</div>
+
+</form>
+</body>
+</html>

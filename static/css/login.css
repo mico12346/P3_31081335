@@ -1,0 +1,78 @@
+body{
+	background-image:url(https://images.unsplash.com/photo-1542393545-10f5cde2c810?auto=format&fit=crop&q=80&w=1365&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-position-Y: -400px;
+	background-attachment: fixed;
+	overflow: hidden;
+}
+.Body{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#login{
+	display:flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items:center;
+	background:rgba(99, 47, 154, .5);
+	width:50%;
+	height:40vh;
+	margin-top: 150px;
+	border-radius:10px 10px 10px 10px;
+	box-shadow: 0px 0px 10px 5px black;
+	animation: color 5s alternate infinite;
+}
+@keyframes color {
+	0%{
+		background: rgba(99, 47, 154, .5);
+	}
+	15%{
+		background: rgba(99, 47, 154, .5);
+	}
+	30%{
+		background: rgba(99, 47, 154, .5);
+	}
+	40%{
+		background: rgba(99, 47, 154, .5);
+	}
+	60%{
+		background: rgba(244, 146, 56, .5);
+	}
+	100%{
+		background: rgba(244, 146, 56, .5);
+	}
+	
+}
+label{
+	font-weight: bold;
+	font-size: 30px;
+	color:white;
+}
+h1{
+	text-align:center;
+	font-weight: unset;
+	color: aliceblue;
+	margin-top: -200px;
+}
+form{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+input{
+padding:8px;
+border-radius:10px 10px 10px 10px;
+}
+#iniciar{
+	margin-top:10px;
+	padding: 7px;
+	border-radius:10px 10px 10px 10px;
+}
+#inicia
+
