@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Laptos</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="/img/laptop.png" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/css/clientes.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class='contenedorPrincipal'>
+            
+        
+        <nav>
+
+               <div id='styleDiv1'>
+
+            
+                   <input type="search" placeholder="Buscar" id='buscarPrincipal'> 
+
+                   <a href="#scroll"><button onclick="buscarProductos()" id='boton3'>Buscar</button>
+                   </a>
+                   
+               </div>
+<!---------------------------------------------------------->
+                <div id="na">
+                    <ul>
+                        <li><a aria-current="page" href="/">Volver</a></li>
+                
+                    </ul>
+                </div>
+<!---------------------------------------------------------->
+                
+<!--------------------------------------->
+<div id="na2">
+
+ <ul class="menu-horizontal">
+     
+        <li class="li">
+            <img src="/img/house.png" id='imggg'>
+
+            <ul class="menu-vertical">
+
+            <li><a aria-current="page" href="#productosH2" style='color:white'>Productos</a></li>
+            <li><a href="/" style='color:white'>Contacto</a></li>
+
+            </ul>
+
+        </li>
+    </ul>
+
+</div>
+<!---------------------------------------------------------->
+                
+  
+        </nav>
+        <div class="col-lg-6" id='galeriaImagenes'>
+               
+            <br>
+            <br>
+            <!--88888888888888888888888888888888888888-->
+            </div>
+        <!-- Header - set the background image for the header in the line below-->
+        <header style="background-image: url('https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
+
+            <div id='titulo'>
+                <h1>Tecno Express</h1>
+            </div>
+
+        </header>
+<!-----------------------------------------------------------------> 
+        <!-- Content section-->
+        <section>
+                <h2 id='productosH2'>Productos</h2>
+            <div>
+                <div>
+
+                     <button id='botonCuadricula' onClick="cuadricula()"><img src="/img/m.png" style='width:100%;border:none'></button>
+
+                 <!----------------+++++++++++++++++++++---->    
+             <div class='product' id='listaDeProductos'>
+                <!-------------------------------->  
+                <%for(let x = 0;x < producto.length;x++){%>
+                     
+                    <div class='productooo'>
+                     
+                         <img src="<%= producto[x].imagen_url %>" class='imagen' id='imagenSelector'>
+                         <br>
+
+                           <div id='NPB'>
+                             
+                             <div style='display:flex;flex-direction: column;justify-content:center;align-items:center'>
+                    <p><strong>Nombre:</strong><%= producto[x].nombre %></p>
+                    <strong><p>Precio: </strong><span style='color:green'><%= producto[x].precio %> $</span></p>
+
+                             </div>
+
+                             <div id='comprarDetalles'>
+
+                             
+                            <div class='detallesP'>
+                                 
+                             <a href="/detalles/<%=producto[x].producto_id%>" style='margin-top:7px;margin-left:15px;'><img src="/img/lupa.png" style='width:60%;'></a>
+                            </div>
+                  <!----------------------->
+                            <div class='detalles'>
+                                 <button id='botonP'>
+
+                                <img src="/img/comprar.png" style='width:60%'>
+
+                            </button>
+
+                            </div>
+
+                            
+
+                             </div>
+                            
+
+                           </div>
+
+                    </div><!----producto---->
+
+                    <% } %>
+              <!-------------------------------->
+                     
+                          <table class='table'>
+
+                        <thead>
+                            <tr>
+                                
+                                <th class='column'>Imagen</th>
+                                <th class='column'>Nombre</th>
+                                <th class='column'>Codigo</th>
+                                <th class='column'>Precio</th>
+                                <th class='column'>Descripcion</th>
+                                <th class='column'>Color</th>
+                                <th class='column'>Peso</th>
+                                <th class='column'>Categoria</th>
+                                <th class='column'>Opciones</th>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        <%for(let u = 0;u < producto.length;u++){%>
+                         <tr class='tr' style='border:1px solid black'><!--ul-->
+                            <!--li-->
+                            <td class='column'><img src="<%= producto[u].imagen_url %>" style='width:100%;height:17vh'></td>
+                             <td class='column'><%= producto[u].nombre %></td>
+                             <td class='column'><%= producto[u].codigo %></td>
+                             <td class='column'><%= producto[u].precio %></td>
+                             <td class='column'><%= producto[u].descripcion %></td>
+                             <td class='column'><%= producto[u].calidad %></td>
+                             <td class='column'><%= producto[u].cantidad %></td>
+                             <td class='column'><%= producto[u].categoria_id %>
+                                 
+                             </td>
+
+                             <td style='display:flex;'>
+
+                                <div style='margin-right:15px;margin-top:40px'>
+                                     <a href="/detalles/<%=producto[u].producto_id%>" style='margin-top:7px;margin-left:15px;'><img src="/img/lupa.png" style='width:100%;'></a>
+                                </div>
+
+                                  <div style='margin-right:15px;margin-top:40px'>
+                                      <img src="/img/comprar.png" style='width:100%'>  
+                                  </div>
+                               
+                             </td>
+                              
+                         </tr> 
+                         <% } %>
+                        </tbody>
+                          <tfoot>
+
+                            
+                            
+
+                        </tfoot>
+                         </table>
+                     
+                       <%for(let l = 0 ; l < producto.length; l++){%>
+                        <ul class='ULtabla3'>
+                            <li class='LItabla3'><img src="<%= producto[l].imagen_url %>" style='width:40%;'></li>
+                            <li class='LItabla3'><span>Nombre: </span><span><%= producto[l].nombre %></span></li>
+                            <li class='LItabla3'><span>Codigo: </span><span><%= producto[l].codigo %></span> </li>
+                            <li class='LItabla3'><span>Precio: </span><span><%= producto[l].precio %></span> </li>
+                            <li class='LItabla3'><span>Descripcion: </span><span><%= producto[l].descripcion %></span></li>
+                            <li class='LItabla3'><span>Color: </span><span><%= producto[l].color %></span></li>
+                            <li class='LItabla3'><span>Peso: </span><span><%= producto[l].peso %></span></li>
+                            <li class='LItabla3'><span>Categoria: </span><span><%= producto[l]. categoria_id %></span></li>
+                            <li style='display:flex'>
+                                <div>
+                                    <a href="/detalles/<%=producto[l].producto_id%>" style='margin-top:7px;margin-left:15px;'><img src="/img/lupa.png" style='width:40%;'></a>
+                                </div>
+                                
+                                <div>
+                                   <img src="/img/comprar.png" style='width:40%'> 
+                                </div>
+
+                                 
+                            </li>
+                            
+                        </ul>
+                        <% } %>
+
+                    </div>
+                    <!----------------+++++++++++++++++++++---->  
+                </div>
+            </div>
+        </section>
+  <!--------------------------------------------------------->          
+        
+        <!-- Image element - set the background image for the header in the line below-->
+        <div class="imgFinal" style="background-image: url('https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        <br>
+         <div class="imgFinal" style="background-image: url('https://images.pexels.com/photos/303383/pexels-photo-303383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        <br>
+         <div class="imgFinal" style="background-image: url('https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        
+        
+
+        <!-- Content section-->
+        <section>
+            <div>
+                <div>
+                </div>
+            </div>
+        </section>
+
+         <!--------------------------------------------------------->
+
+        </div>
+     <script type="text/javascript" src='/js/script.js'></script>
+    </body>
+</html>
