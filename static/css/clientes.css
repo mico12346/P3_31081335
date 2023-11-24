@@ -1,0 +1,515 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+/*ESTILOS DE PLANTILLA*/
+  @font-face{
+            font-family:'fuente';
+            src:url(/fuentes/RedwaterBankerItalic_PERSONAL_USE.ot);
+           }
+           header{
+            height:90vh;
+           }
+           body{
+            background:rgba(135, 215, 233,.3);
+           }
+           .product{
+           display:flex;
+           flex-wrap: wrap;
+           justify-content:space-around;
+           align-items:center;
+           margin-bottom:50px;
+           }
+        .imagen{
+            width:100%;
+            height:30vh;
+        }
+        
+        .imgContent{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .productooo{
+           display:flex;
+           flex-direction: column;
+           justify-content:space-around;
+           align-items:center;
+           width:25%;
+           height:40vh;
+           margin-top:80px;
+           margin-left:20px;
+        }
+        .etiquetaP{
+            font-size:1rem;
+            font-weight: bold;
+        }
+        #searchInputt{
+            width:75%;
+            height:6vh;
+            text-align: center;
+        }
+        #buscarPrincipal{
+            width:75%;
+            height:6vh;
+            text-align: center;  
+        }
+        #boton2{
+            width:30%; 
+            height:6vh;
+            margin-left:.5rem;
+            background:rgb(180, 180, 180);
+            border-radius:0 20px 20px 0;
+            transition:all 1s;
+        }
+        #boton2:hover{
+            border-radius:20px 0 0 20px;
+            transform:scale(1.1);
+        }
+        #boton3{
+            margin-left: 5px;
+            margin-top: 2px;
+            width:15%; 
+            height:6vh;
+            background:rgb(135, 215, 233);
+            transition:all 1s;
+            cursor:pointer;
+        }
+       
+        .buscar2{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top:1rem;
+        }
+        /*header{
+           padding-top:1.5;
+           padding-bottom:1.5px;
+        }*/
+         #texto{
+         color:white;
+         margin-top:1rem;
+         padding:1rem;
+         margin-bottom:1rem;
+         background:rgba(0,0,0,.9);
+         width:100%;
+         }
+         #texto p{
+         margin:1.5rem;
+         font:1.5rem 'arial';
+         }
+         h2{
+            font:50px 'fuenteC';
+            text-align: center;
+         }
+         .claseIMG{
+            width:100%;
+            height:40vh;
+            transition:all 1s;
+         }
+                 #botonP{
+          transition:all 1s;
+          width:100%;
+          height:auto;
+          margin-left: 20px;
+          margin-bottom:1.5rem;
+          border:none;
+          background:transparent;
+         }
+         #botonP:hover{
+         cursor:pointer;
+         }
+         .prueba{
+            color:red;
+            text-decoration: none;
+         }
+         /*------------------------------------------------------------*/
+              /*------------------Randis Graterol----------------------*/
+                      /*--------------------------------------*/
+        #na{
+            display:flex;
+            align-items: center;
+            justify-content:flex-end;
+            width:40%;
+            margin-left:1rem;
+        }
+
+        #na ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:7vh;
+            margin-top:1rem;
+            margin-right:1rem;
+        }
+         #na ul a{
+         text-decoration:none;
+         color:white;
+         margin:1rem;
+         font:1.5rem 'fuenteC';
+         transition:all 1s;
+        }
+        #na ul a:hover{
+         text-decoration-line: underline;
+        }
+
+        nav{
+            display:flex;
+            justify-content:center;
+            align-items: center;
+            background:black;
+        }
+        nav #aa{
+            margin-left:20px;
+            text-decoration: none;
+            color:white;
+            font:2rem 'fuenteC';
+        }
+       
+        /*#na ul li{
+          ???????????
+        }*/
+
+         #imggg{
+            display:none;
+        }
+
+        #na2{
+            display:none;
+        }
+
+        #styleDiv1{
+            width:100%;
+            padding:10px;
+        }
+         #NPB{ 
+            display:flex;
+            justify-content:center;
+            align-items:center
+         }
+         #comprarDetalles{
+            display:flex;
+            justify-content:center;
+            align-items: center;
+            width:40%;
+         }
+         a{
+            text-decoration: none;
+
+         }
+         ul{
+            list-style: none;
+         }
+          
+          .cuadriculaLista{
+            background:red;
+            display:flex;
+            flex-direction:column;
+            width:100%;
+         }
+
+         .table{
+         display:none;
+         width:90%;
+         }
+         
+         /*Clases generadas con Javascript*/
+         .tableTR{
+         display:flex;
+         font-size:20px;
+         margin-top:50px;
+         
+         }
+         .cadaProducto{
+         display:none;
+         }
+         .tableMostrar{
+            display:inline-block;
+         }
+         .column{
+            text-align: center;
+            width:20%;
+         }
+         /*boton de cuadricula*/
+         #botonCuadricula{
+            background:transparent;
+            margin-left:90%;
+            border:none;
+         }
+         .ULtabla3{
+            display:none;
+         }
+
+         .tableMostrar{
+            display:inline-block;
+            width:97%;
+         }
+         .contenedorPrincipal{
+            display:flex;
+            flex-direction:column;
+            width:100%;
+            height:auto;
+         }
+         .imgFinal{
+            background-position: top;
+            background-size: cover;
+            background-attachment: fixed;
+         }
+          #botonCuadricula{
+            width:2%;
+            background:transparent;
+            margin-left:5%;
+            border:none;
+            cursor:pointer;
+         }
+         h1{
+           color:white;
+           font:3rem 'fuente';
+           margin-top: 15%;
+           margin-left:23rem;
+           transform:rotate(-5deg);
+        }
+        
+/*-----------------------------------------------------------*/
+
+
+/*__________>>__R__>>__A__>>__N__>>__D__>>__I_ >>_S_________*/
+
+           /*-----------RESPONSIVE---------*/
+
+/*-------------Resolucion 720 infinix Smarth 7---------------*/
+
+
+ /*-----------------------------------------------------------*/
+        @media screen and (max-width: 720px){
+
+        *{
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+        }
+        body{
+            margin:0;
+            padding:0;
+        }
+
+          nav #aa{
+            margin-left:15px;
+            text-decoration: none;
+            color:white;
+            font:20px 'fuenteC';
+        } 
+
+        #comprarDetalles{
+            display:flex;
+            justify-content:center;
+            align-items: center;
+         }
+        #na ul{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border:1px solid blue;
+            height:7vh;
+            margin-top:1rem;
+            width:50%;
+        }
+
+        #na{
+         text-decoration:none;
+         color:white;
+         font:10px 'fuenteC';
+         transition:all 1s;
+        }
+
+         #imggg{
+            display:block;
+            width:70px;
+        }
+        #imggg:hover{
+        transform: translateY(-5px);
+        }
+
+        #na{
+          display:none;
+        }
+
+        #na2{
+            display:block;
+            margin-left:60px;
+        }
+         a{
+          text-decoration: none;
+          color:black;
+         }
+        /*----------------------*/
+        /*nav responsive*/
+          .menu-horizontal{
+            border:1px solid red violet;
+        list-style:none;
+        display:flex;
+        justify-content:space-around;
+       }
+
+       .menu-horizontal li img{
+          display:block;
+          padding:15px 20px;
+          color: white;
+          text-decoration:none;
+       }
+       /*.menu-horizontal*/.li:hover{
+        background-color:grey;
+       }
+       .menu-vertical{
+        position: absolute;
+        display:none;
+        list-style: none;
+        width:20%;
+        background:rgb(0,0,0,0.7);
+        transform:translateX(-60px);
+       }
+       .menu-horizontal li:hover .menu-vertical{
+       display: block;
+       }
+
+       .menu-vertical li:hover{
+        background: black;
+       }
+       .menu-vertical li img{
+        display: block;
+        color:white;
+        text-decoration:none;
+       }
+       .flex{
+       display: flex;
+      }
+
+      li{
+       margin-top: 40px; 
+      }
+       
+       #boton3{
+            margin-top: 2px;
+            width:23%; 
+            height:4vh;
+            background:rgb(135, 215, 233);
+        }
+         #buscarPrincipal{
+            height:4vh;
+            width:70%;
+        }
+       
+        .productooo{
+           display:flex;
+           flex-direction: column;
+           justify-content:space-around;
+           align-items:center;
+           width:30%;
+           height:40vh;
+           margin:1rem;
+           margin-top: 100px;
+        }
+        #NPB{ 
+            display:flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items:center
+         }
+
+          #botonP{
+          background:rgb(56, 247, 9);
+          transition:all 1s;
+          border-radius:10px;
+          margin-top:0;
+         }
+         #botonP:hover{
+          transform:translateY(-5px);
+          box-shadow:15px 15px 100px black;
+         }
+         .imagen{
+            width:100%;
+            height:30vh;
+            transition:all 1s;
+        }
+        
+        .imagen:hover{
+            transform:scale(1.1);
+            box-shadow:14px 15px 100px black;
+        }
+
+        .product{
+           display:flex;
+           justify-content: center;
+           align-items: center;
+           justify-content:space-around;
+           align-items:center;
+
+           }
+
+            #botonCuadricula{
+            width:10%;
+            background:transparent;
+            margin-left:70%;
+            border:none;
+         }
+
+          .claseIMG{
+            width:100%;
+            height:30vh;
+            transition:all 1s;
+         }
+         .claseIMG:hover{
+           transform:scale(1.1);
+           box-shadow:14px 15px 100px black;
+         }
+         .table{
+         display:none;
+         }
+
+          .cadaProducto{
+         display:none;
+         }
+         
+         .tableTR{
+         display:flex;
+         font-size:5px;
+         border:1px solid black;
+         }
+        
+         /*clases generadas con javaScript*/
+         .claseTabla3-JS{
+            display:flex;
+            flex-direction:column;
+            justify-content: space-evenly;
+            align-items: center;flex-wrap: wrap;
+            width:60%;
+            margin-top:50px;
+            background:rgba(0,0,0,.7);
+            color:white;
+            border:1px solid gold;
+         }
+
+          h1{
+           font:30px 'fuente';
+           margin-top: 15%;
+          
+        }
+        #titulo{
+            display:flex;
+            justify-content:center;
+            align-items: center;
+            width:70%;
+            margin-top:60%;
+        }
+        .ULtabla3{
+            border:none;
+            background:rgba(135, 215, 233,.3);
+            color:black;
+        }
+
+        }
+
+       
+        /*´------------------------´-------*/ 

@@ -4,85 +4,97 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Imagen</title>
+
 	<style type="text/css">
-		@font-face{
-			font-family: "Hola";
-			src: url("/fuentes/RedwaterBanker_PERSONAL_USE.otf");
-		}
+
+@font-face{
+          font-family:'dar';
+          src:url('/fuentes/GnarlyBoneBlack_PERSONAL_USE_ONLY.otf');
+        }
 		body{
-	background-image:url(https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?auto=format&fit=crop&q=80&w=1364&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+	background-image:url('https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 	background-size:cover;
-	background-position-y: -300px ;
-	background-repeat: no-repeat;
 	background-attachment: fixed;
-	display: flex;
-	justify-content: center;
-	align-items: center;
     }
-    .Forma{
-		position: relative;
+    form{
     	display: flex;
     	flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		margin-top: 300px;
-    	width:30%;
-		background: rgba(0, 0, 0, 1);
-		border-radius: 5px;
-		box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 1);
-		transition: all 200ms;
+    	justify-content: center;
+    	align-items: center;
+    	margin:80px auto;
+    	width:40%;
+    	border:1px solid black;
     }
-	.Forma:hover{
-		box-shadow: 0px 0px 20px 15px rgba(0, 0, 0, 1);
-	}
-	form{
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		gap: 10px;
-	}
     input{
     	padding:10px;
     	margin:10px;
-		width: 300px;
-		background: rgb(80, 80, 80);
-		box-shadow: 0 0 10px 5px rgb(80, 80, 80);
-		border: none;
-		color: rgb(212, 212, 212);
     }
-	input:nth-of-type(1)::placeholder{
-		color: rgb(212, 212, 212);
-	}
     label{
-		font: 40px "hola";
-    	font-size: 30px;
+    	font:30px 'dar' ;
     	font-weight: bold;
-		color: rgb(212, 212, 212);
+    	color:white;
     }
-	.Imagen{
-		background: rgb(80, 80, 80);
-		width: 90%;
-	}
-	.Destacado{
-		width: 290px;
-	}
+   h1{
+   	font:40px 'dar' ;
+   	text-align: center;
+   	line-height: 50px;
+   	color:white;
+   }
+   #destacado{
+   	width:20%;
+   	border-radius:10px 10px 10px 10px;
+   }
+  #divDestacado{
+  	border:1px solid black;
+  	width:70%;
+  	margin:50px auto;
+  	background:rgba(108, 114, 114,.7);
+  }
+  #botones{
+	display:flex;
+	justify-content: flex-end;
+	align-items: center;
+	 border:1px solid white;
+	 border-top:none;
+	 border-left:none;
+	 border-right:none;
+}
+  #botones a{
+	border-radius:15px 10px 20px 10px;
+	font:30px 'dar';
+	padding:20px;
+	text-decoration: none;
+	color:white;
+	
+}
+
+
 	</style>
+
+
 </head>
 <body>
-<div class="Forma">
-<form action="/addImagen" method="post">
+
+<div id='botones'>
+	<a href='/productos'>Volver</a>
+</div>
+
+<h1>Agregar Imagen</h1>
+
+	
+<form action="/addImagen/<%=modelo.producto_id%>" method="post" enctype="multipart/form-data">
+	
+	<label for='imagen'>Imagen</label>
+	
+	<input type="file" name="img" id="img" placeholder="Imagen">
+  
 	<label for="destacado">Destacado</label>
 	
-	<input type="text" name="destacado" placeholder="Destacado" id='destacado' class="Destacado">
-</form>
-<form action="/addImagen" method="post">
-	<label for='imagen'>Imagen</label>
-	<input type="file" name="img" id="img" placeholder="Imagen" class="Imagen">
+	<input type="number" name="destacado" value='0' id='destacado' style='text-align: center;'>
 
-	<input type="submit" value="Añadir imagen" id="sendImg" class="Submit">
+	<input type="submit" value="add" id="destacado">
 </form>
-</div>
+
+
 </body>
 </html>

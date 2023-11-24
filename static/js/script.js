@@ -1,0 +1,78 @@
+
+
+function cuadricula(){
+let ulTabla3 = document.querySelectorAll('.ULtabla3');
+let table = document.querySelector('.table');
+let productooo = document.querySelectorAll('.productooo');
+table.classList.toggle('tableMostrar');//muestro la tabla
+for(let k = 0 ; k < productooo.length;k++ ){
+productooo[k].classList.toggle('cadaProducto');
+ulTabla3[k].classList.toggle('claseTabla3-JS');
+}
+//--------------------------------
+//-
+
+}
+
+//-----------------------------------------------------------------
+ function buscarProductos(){
+  const searchInput = document.getElementById('buscarPrincipal');
+  const valorBusqueda = searchInput.value.trim();
+  let galeriaImagenesBusqueda = document.getElementById('galeriaImagenes'); 
+  console.log(valorBusqueda,'dato del query');
+
+   // Elimina el último hijo de galeriaImagenesBusqueda, si existe
+ const ultimoHijo = galeriaImagenesBusqueda.lastElementChild;
+  if (ultimoHijo){
+    galeriaImagenesBusqueda.removeChild(ultimoHijo);
+  }
+
+     // Realiza la solicitud al servidor
+    fetch(`/cliente?busqueda=${valorBusqueda}`)
+    .then(response => response.json())
+    .then(data => {
+
+        if(data && data.producto.length > 0){
+ 
+           let fragmento= document.createDocumentFragment();
+         let img = document.createElement("img");
+         let h2 = document.createElement('H2');
+         h2.innerHTML='Producto Encontrado';
+         h2.style='color:green;text-aling:center;font-size:2rem;margin-bottom:20px';
+         let nombre = document.createElement('P');
+         let precio = document.createElement('P');
+         let div = document.createElement('DIV');
+         let div2 = document.createElement('DIV');
+         div2.style='display:flex;flex-direction:column;justify-content:center;aling-item:center;margin-left:30px';
+         div.style='display:flex;flex-direction:column;width:50%;margin:50px auto';
+         nombre.innerHTML=`<span class='etiquetaP'>Nombre :</span> ${data.producto[0].nombre}`;
+         precio.innerHTML=`<span class='etiquetaP'>Precio :</span> <span style='color:green'>${data.producto[0].precio} $</span>`;
+         nombre.style='margin-top:30px';
+         img.src=data.producto[0].url;
+         img.classList.add('claseIMG');
+         div2.append(nombre);
+         div2.append(precio);
+         div.append(h2);
+         div.append(img);
+         div.append(div2);
+         fragmento.append(div);
+         galeriaImagenesBusqueda.append(fragmento);
+      // Muestra los resultados en la página  
+
+        }else{
+
+             
+        // No se encontraron resultados, muestra un mensaje
+        let mensaje = document.createElement('P');
+        mensaje.style='display:flex;justify-content:center;aling-item:center;color:red;font-size:30px';
+        mensaje.innerHTML = 'Producto No encontrado <span style="color:gold">---(Verifique su busqueda)</span>';
+        galeriaImagenesBusqueda.appendChild(mensaje);
+
+
+        }
+             
+    })
+    .catch(error => {
+      console.error(error.message);
+    });
+}
