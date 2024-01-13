@@ -10,6 +10,7 @@
         <link rel="icon" type="image/x-icon" href="/img/laptop.png" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="/css/clientes.css" rel="stylesheet" />
+          <script type="text/javascript" src="/js/alert.js"></script>
     </head>
     <body>
         <div class='contenedorPrincipal'>
@@ -29,7 +30,7 @@
 <!---------------------------------------------------------->
                 <div id="na">
                     <ul>
-                        <li><a aria-current="page" href="/">Volver</a></li>
+                        <li><a aria-current="page" href="/logout">Volver</a></li>
                 
                     </ul>
                 </div>
@@ -99,24 +100,13 @@
 
                              </div>
 
-                             <div id='comprarDetalles'>
-
-                             
-                            <div class='detallesP'>
-                                 
-                             <a href="/detalles/<%=producto[x].producto_id%>" style='margin-top:7px;margin-left:15px;'><img src="/img/lupa.png" style='width:60%;'></a>
-                            </div>
+                             <div class='comprarDetalles'>
+ 
+                             <a href="/detalles/<%=producto[x].producto_id%>" style='margin-top:7px;margin-left:15px;'><img src="/img/lupa.png" width="25"></a>
+                        
                   <!----------------------->
-                            <div class='detalles'>
-                                 <button id='botonP'>
-
-                                <img src="/img/comprar.png" style='width:60%'>
-
-                            </button>
-
-                            </div>
-
-                            
+                           
+                                <a href="/comprar/<%=producto[x].producto_id%>"><img src="/img/comprar.png" width="30"></a>
 
                              </div>
                             
@@ -245,6 +235,35 @@
          <!--------------------------------------------------------->
 
         </div>
+
+<script type="text/javascript">
+     fetch('/transaction')
+    .then(res=>res.json())
+    .then(respuesta=>{
+        if(respuesta.message !== false){
+         console.log(respuesta);
+           Swal.fire(respuesta.transaction.message)
+
+           .then(() =>{
+        // Aquí la alerta se ha cerrado
+            console.log("Alerta cerrada");
+            fetch('/eliminarTransaction')
+            .then(res=> res.json())
+            .then(respuesta2=>{
+            console.log(`Message : ${respuesta2.message}`);
+            })
+            .catch(error => {
+               console.error('*_*/-[Error]-/*_*:', error);
+             });
+        }); 
+
+           console.log(respuesta.transaction.message,'respuesta del server');  
+       }else{
+        console.log('No se recibio respuesta of the transaction'); 
+    }
+
+})
+</script>
      <script type="text/javascript" src='/js/script.js'></script>
     </body>
 </html>

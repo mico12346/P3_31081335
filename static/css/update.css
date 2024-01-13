@@ -26,18 +26,16 @@ body{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-top: -82px;
-	margin-left: 40px;
-	overflow: hidden;
 }
 h1{
 	width: 55.5vw;
 	background:rgba(0, 0, 0, .7);
-	margin-bottom:10%;
+	margin-top: 5rem;
+	
 }
 .flex-principal{
 	width: 55.5vw;
-	height: 42vh;
+	height: auto;
 	display:flex;
 	flex-wrap: wrap;
 	justify-content:center;
@@ -49,12 +47,13 @@ h1{
 }
 #editorcentrall{
 	width: 50vw;
-	height: 10vh;
+	height: auto;
 	display:flex;
 	flex-wrap: wrap;
 	justify-content:space-between;
 	align-content: center;
 	gap: 10px;
+	margin-top: 2rem;
 }
 #footer{
 	text-align: center;
@@ -69,13 +68,13 @@ footer{
 	
 }
 section{
-    background:rgba(0,0,0,.7);
+
 	display:flex;
 	flex-direction: column;
 	justify-content:flex-start;
 	align-items:flex-start;
 	width:90%;
-	height:100%;
+	height:auto;
 	margin:50px auto;
 	font-size:25px;
 	margin:10px;
@@ -149,7 +148,14 @@ input:hover{
 	align-items: center;
 	gap: 50px;
 	width: 10%;
-	height:10%;
+	height:auto;
+	margin:6rem auto;
+}
+
+#cancelar input{
+	padding:.5rem;
+	line-height: 1px;
+	cursor:pointer;
 }
 
 #botonProductos{
@@ -176,4 +182,22 @@ label{
 }
 #eliminarRegistro{
 	cursor:pointer;
+}
+@media screen and (max-width:720px){
+	h1{
+	width: 55.5vw;
+	background:rgba(0, 0, 0, .7);
+	margin-top: 15rem;
+	
+}
+.flex-principal{
+	width: 50vw;
+	height: auto;
+	display:flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items:center;
+	color:rgb(255, 255, 255);
+	background:rgb(0,0,0,.7);
+    padding:3rem;
 }

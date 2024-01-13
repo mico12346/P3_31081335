@@ -18,12 +18,16 @@
 
     <div id="cancelar">
       <input type="submit" value="Eliminar Producto" id="eliminarRegistro">
-      <a href="/productos" id="botonProductos">Cancelar</a>
-    
+     <input type="button" value="Cancelar" onclick="cancelar()">
     </div>
 </div>
 
 </form>
+<script type="text/javascript">
+  const cancelar = ()=>{
+ window.location.href='/productos';
+  }
+</script>
 </body>
 </html>
 

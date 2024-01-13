@@ -28,10 +28,15 @@
 <!------------------------------------------->
 <div id="cancelar">
 	<input type="submit" value="Agregar" id="update">
-    <a href="/categorias" id="botonProductos">Volver</a>
+    <input type="button" value="Cancelar" onclick="cancelar()">
 </div>
 
 
 </form>
+<script type="text/javascript">
+    const cancelar=()=>{
+        window.location.href='/categorias';
+    }
+</script>
 </body>
 </html>

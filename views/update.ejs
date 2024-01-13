@@ -19,11 +19,16 @@
 <!------------------------------------------->
 <div id="cancelar">
 	<input type="submit" value="Actualizar" id="update" class="C1">
-    <a href="/productos" id="botonProductos" class="C2">Productos</a>
+    <input type="button" value="regresar" onclick="regresar()">
 </div>
 
 </div>
 </form>
+<script type="text/javascript">
+    function regresar(){
+        window.location.href='/productos';
+    }
+</script>
 </body>
 </html>
 

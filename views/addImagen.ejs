@@ -88,9 +88,10 @@
 	
 	<input type="file" name="img" id="img" placeholder="Imagen">
   
-	<label for="destacado">Destacado</label>
-	
-	<input type="number" name="destacado" value='0' id='destacado' style='text-align: center;'>
+	<select id='destacado' name="destacado">
+		<option value='1'>Principal</option>
+		<option value='0'>No principal</option>
+	</select>
 
 	<input type="submit" value="add" id="destacado">
 </form>

@@ -43,8 +43,17 @@ ulTabla3[k].classList.toggle('claseTabla3-JS');
          let precio = document.createElement('P');
          let div = document.createElement('DIV');
          let div2 = document.createElement('DIV');
-         div2.style='display:flex;flex-direction:column;justify-content:center;aling-item:center;margin-left:30px';
-         div.style='display:flex;flex-direction:column;width:50%;margin:50px auto';
+         let a = document.createElement('A');
+         a.setAttribute('href',`/comprar/${data.producto[0].producto_id}`);
+         let imgComprar = document.createElement('IMG');
+         imgComprar.src='/img/comprar.png';
+         imgComprar.style='width:30px';
+         a.append(imgComprar);
+
+         div2.style='display:flex;flex-direction:column;justify-content:center;aling-item:center;margin:.2rem auto;width:30%';
+
+         div.style='display:flex;flex-direction:column;width:50%;margin:50px auto;';
+
          nombre.innerHTML=`<span class='etiquetaP'>Nombre :</span> ${data.producto[0].nombre}`;
          precio.innerHTML=`<span class='etiquetaP'>Precio :</span> <span style='color:green'>${data.producto[0].precio} $</span>`;
          nombre.style='margin-top:30px';
@@ -52,6 +61,7 @@ ulTabla3[k].classList.toggle('claseTabla3-JS');
          img.classList.add('claseIMG');
          div2.append(nombre);
          div2.append(precio);
+         div2.append(a);
          div.append(h2);
          div.append(img);
          div.append(div2);
