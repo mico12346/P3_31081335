@@ -81,7 +81,13 @@ app.get('/',(req,res)=>{
 });
 
 app.get('/login',(req,res)=>{
-res.render('iniciarSesion.ejs');
+res.render('iniciarSesion.ejs',{
+  og: {
+      title: 'Laptop',
+      description: 'Venta de laptop',
+      image: 'https://images.unsplash.com/photo-1491472253230-a044054ca35f?auto=format&fit=crop&q=80&w=1484&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+      }
+});
 });
 
 
@@ -220,7 +226,7 @@ app.get('/comprar/:id',verifyToken,(req,res)=>{
   base.comprar(req,res);
 });
 //------------------------------------------------------
-app.post('/comprarPost',async (req,res)=>{
+app.post('/comprarPost',verifyToken,async (req,res)=>{
 base.comprarPOST(req,res);
 })
 //------------------------------------------------------
@@ -294,6 +300,55 @@ base.deleteUser(req,res);
 app.get('/deleteCompra/:id',(req,res)=>{
 base.deleteCompra(req,res);
 })
+//------------------------------------------------------
+//------------------------------------------------------
+app.post('/puntuaciones',verifyToken,(req,res)=>{
+baseDatos.puntuaciones(req,res);
+});
+//------------------------------------------------------
+
+//------------------------------------------------------
+
+app.get('/recuperarPassword',(req,res)=>{
+res.render('recuperarPassword.ejs',{
+    og: {
+      title: 'Laptop',
+      description: 'Venta de laptop',
+      image: 'https://images.unsplash.com/photo-1491472253230-a044054ca35f?auto=format&fit=crop&q=80&w=1484&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+      }
+});
+});
+
+//------------------------------------------------------
+app.post('/recuperarPassword',(req,res)=>{
+baseDatos.enviarEmailRecuperacion(req,res);
+});
+//------------------------------------------------------
+app.get('/restablecer-contrasena',(req,res)=>{  
+
+const token = req.query.token;
+const UserName = req.query.userName;
+console.log(userName);
+
+const tokenCookies = req.cookies.securityToken;
+
+console.log(tokenCookies,'tokenCookies');
+console.log(token,'token');
+
+
+res.render('restablecer.ejs',{user:UserName, og: {
+      title: 'Laptop',
+      description: 'Venta de laptop',
+      image: 'https://images.unsplash.com/photo-1491472253230-a044054ca35f?auto=format&fit=crop&q=80&w=1484&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+      }});
+
+});
+//------------------------------------------------------
+app.post('/restablecer-contrasena',(req,res)=>{
+
+baseDatos.restablecerPost(req,res);
+
+});
 //------------------------------------------------------
 //logout cliente
 app.get('/logout',(req, res) => {
