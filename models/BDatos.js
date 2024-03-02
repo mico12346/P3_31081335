@@ -248,7 +248,7 @@ function getCategorias(req,res){
 }
 
 function postCategorias(req,res){
-const {nombre} = req.body
+const {nombre} = req.body;
 const sql = `INSERT INTO categorias(nombre) 
     VALUES (?)`;
 
@@ -427,7 +427,7 @@ function registroUsuariosPost(req,res){
   from:'soapdelinger@gmail.com',
   to:email,
   subject:'!Bienvenido a nuestra página web¡',
-  text:`Hola ${nombre} , !Te damos la Bienvenida a una de las mejores páginas de venta y compra de Smarphone, donde podras encontrar gran variedad de productos y marcas¡`
+  text:`Hola ${nombre} , !Te damos la Bienvenida a una de las mejores páginas de venta y compra de laptops, donde podras encontrar gran variedad de productos y marcas¡`
   }
 
   transporter.sendMail(mensaje,(error,info)=>{
@@ -570,8 +570,8 @@ db.run(sql,[nombre_de_usuario,apellido,cedula,telefono,cliente_id,producto_id,ca
   const mailOptions = {
     from: 'soapdelinger@gmail.com', // Reemplaza con tu dirección de correo electrónico
     to: destinatario, // Reemplaza con la dirección de correo del cliente
-    subject:'Mensaje de confirmación de compra exitosa', // Reemplaza con el asunto del correo electrónico
-    text: 'Gracias por preferirnos a la hora de comprar telefonos mobiles , su compra a sido exitosa' // Reemplaza con el contenido del correo electrónico en texto sin formato
+    subject:'Mensaje de confirmación de compra exitosa', // Reaemplaza con el asunto del correo electrónico
+    text: 'Gracias por preferirnos a la hora de comprar equipos para el hogar ,su compra a sido exitosa' // Reemplaza con el contenido del correo electrónico en texto sin formato
   };
 
   // Envía el correo electrónico
@@ -754,7 +754,7 @@ function enviarEmailRecuperacion(req,res){
  res.cookie('securityToken',token, { httpOnly: true, secure: true });
 
   // Crear la URL de recuperación de contraseña
-  const recoveryURL = `http://ventasonlinerandis.onrender.com/restablecer-contrasena?token=${token}?userName=${UserName}`;
+  const recoveryURL = `https://weblineamaikol.onrender.com/restablecer-contrasena?token=${token}?userName=${UserName}`;
 
   // Enviar el correo electrónico de recuperación de contraseña
   const mailOptions = {

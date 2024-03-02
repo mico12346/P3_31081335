@@ -303,7 +303,7 @@ base.deleteCompra(req,res);
 //------------------------------------------------------
 //------------------------------------------------------
 app.post('/puntuaciones',verifyToken,(req,res)=>{
-baseDatos.puntuaciones(req,res);
+base.puntuaciones(req,res);
 });
 //------------------------------------------------------
 
@@ -321,7 +321,7 @@ res.render('recuperarPassword.ejs',{
 
 //------------------------------------------------------
 app.post('/recuperarPassword',(req,res)=>{
-baseDatos.enviarEmailRecuperacion(req,res);
+base.enviarEmailRecuperacion(req,res);
 });
 //------------------------------------------------------
 app.get('/restablecer-contrasena',(req,res)=>{  
@@ -346,7 +346,7 @@ res.render('restablecer.ejs',{user:UserName, og: {
 //------------------------------------------------------
 app.post('/restablecer-contrasena',(req,res)=>{
 
-baseDatos.restablecerPost(req,res);
+base.restablecerPost(req,res);
 
 });
 //------------------------------------------------------
